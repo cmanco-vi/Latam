@@ -1,0 +1,348 @@
+<html dir="ltr" lang="es" class="translated-ltr"><!--<![endif]--><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Tu tienda</title>
+<base href="https://demo.opencart.com/">
+<meta name="description" content="My Store">
+<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css">
+<link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
+<link href="catalog/view/javascript/jquery/swiper/css/swiper.min.css" type="text/css" rel="stylesheet" media="screen">
+<link href="catalog/view/javascript/jquery/swiper/css/opencart.css" type="text/css" rel="stylesheet" media="screen">
+<script src="catalog/view/javascript/jquery/swiper/js/swiper.jquery.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+<link href="https://demo.opencart.com/" rel="canonical">
+<link href="https://demo.opencart.com/image/catalog/cart.png" rel="icon">
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css"></head>
+<body>
+<nav id="top">
+<div class="container"><div class="pull-left">
+<form action="https://demo.opencart.com/index.php?route=common/currency/currency" method="post" enctype="multipart/form-data" id="form-currency">
+<div class="btn-group">
+<button class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> <strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">€ </font></font></strong> <span class="hidden-xs hidden-sm hidden-md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Moneda</font></font></span>&nbsp;<i class="fa fa-caret-down"></i></button>
+<ul class="dropdown-menu">
+<li>
+<button class="currency-select btn btn-link btn-block" type="button" name="EUR"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">€ euros</font></font></button>
+</li>
+<li>
+<button class="currency-select btn btn-link btn-block" type="button" name="GBP"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">£ libra esterlina</font></font></button>
+</li>
+<li>
+<button class="currency-select btn btn-link btn-block" type="button" name="USD"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">$ dólar estadounidense</font></font></button>
+</li>
+</ul>
+</div>
+<input type="hidden" name="code" value="">
+<input type="hidden" name="redirect" value="https://demo.opencart.com/index.php?route=common/home">
+</form>
+</div>
+<div id="top-links" class="nav pull-right">
+<ul class="list-inline">
+<li><a href="https://demo.opencart.com/index.php?route=information/contact"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">123456789</font></font></span></li>
+<li class="dropdown"><a href="https://demo.opencart.com/index.php?route=account/account" title="Mi cuenta" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mi cuenta</font></font></span> <span class="caret"></span></a>
+<ul class="dropdown-menu dropdown-menu-right">
+<li><a href="https://demo.opencart.com/index.php?route=account/register"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Registro</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=account/login"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Acceso</font></font></a></li>
+</ul>
+</li>
+<li><a href="https://demo.opencart.com/index.php?route=account/wishlist" id="wishlist-total" title="Lista de deseos (0)"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lista de deseos (0)</font></font></span></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=checkout/cart" title="Carro de compras"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Carro de compras</font></font></span></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=checkout/checkout" title="Verificar"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Verificar</font></font></span></a></li>
+</ul>
+</div>
+</div>
+</nav>
+<header>
+<div class="container">
+<div class="row">
+<div class="col-sm-4">
+<div id="logo"> <h1><a href="https://demo.opencart.com/index.php?route=common/home"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tu tienda</font></font></a></h1>
+</div>
+</div>
+<div class="col-sm-5"><div id="search" class="input-group">
+<input type="text" name="search" value="" placeholder="Búsqueda" class="form-control input-lg">
+<span class="input-group-btn">
+<button type="button" class="btn btn-default btn-lg"><i class="fa fa-search"></i></button>
+</span>
+</div></div>
+<div class="col-sm-3"><div id="cart" class="btn-group btn-block">
+<button type="button" data-toggle="dropdown" data-loading-text="Loading..." class="btn btn-inverse btn-block btn-lg dropdown-toggle"><i class="fa fa-shopping-cart"></i> <span id="cart-total"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0 articulo(s) - 0.00€</font></font></span></button>
+<ul class="dropdown-menu pull-right">
+<li>
+<p class="text-center"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">¡Su cesta está vacía!</font></font></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</header>
+<div class="container">
+<nav id="menu" class="navbar">
+<div class="navbar-header"><span id="category" class="visible-xs"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Categorías</font></font></span>
+<button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+</div>
+<div class="collapse navbar-collapse navbar-ex1-collapse">
+<ul class="nav navbar-nav">
+<li class="dropdown"><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=20" class="dropdown-toggle" data-toggle="dropdown"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Escritorios</font></font></a>
+<div class="dropdown-menu" style="">
+<div class="dropdown-inner"> <ul class="list-unstyled">
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=20_26"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ordenador personal (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=20_27"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mac (1)</font></font></a></li>
+</ul>
+</div>
+<a href="https://demo.opencart.com/index.php?route=product/category&amp;path=20" class="see-all"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mostrar todos los escritorios</font></font></a> </div>
+</li>
+<li class="dropdown"><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=18" class="dropdown-toggle" data-toggle="dropdown"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Portátiles y Notebooks</font></font></a>
+<div class="dropdown-menu" style="">
+<div class="dropdown-inner"> <ul class="list-unstyled">
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=18_46"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mac (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=18_45"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ventanas (0)</font></font></a></li>
+</ul>
+</div>
+<a href="https://demo.opencart.com/index.php?route=product/category&amp;path=18" class="see-all"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mostrar todas las computadoras portátiles y portátiles</font></font></a> </div>
+</li>
+<li class="dropdown"><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=25" class="dropdown-toggle" data-toggle="dropdown"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Componentes</font></font></a>
+<div class="dropdown-menu" style="">
+<div class="dropdown-inner"> <ul class="list-unstyled">
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=25_29"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ratones y Trackballs (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=25_28"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Monitores (2)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=25_30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Impresoras (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=25_31"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Escáneres (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=25_32"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cámaras web (0)</font></font></a></li>
+</ul>
+</div>
+<a href="https://demo.opencart.com/index.php?route=product/category&amp;path=25" class="see-all"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mostrar todos los componentes</font></font></a> </div>
+</li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=57"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">tabletas</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=17"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Software</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=24"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Teléfonos y PDA</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=33"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cámaras</font></font></a></li>
+<li class="dropdown"><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34" class="dropdown-toggle" data-toggle="dropdown"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Reproductores de mp3</font></font></a>
+<div class="dropdown-menu" style="margin-left: -208.156px;">
+<div class="dropdown-inner"> <ul class="list-unstyled">
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_43"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 11 (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_44"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 12 (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_47"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 15 (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_48"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 16 (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_49"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 17 (0)</font></font></a></li>
+</ul>
+<ul class="list-unstyled">
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_50"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 18 (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_51"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 19 (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_52"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 20 (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_53"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 21 (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_54"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 22 (0)</font></font></a></li>
+</ul>
+<ul class="list-unstyled">
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_55"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 23 (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_56"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 24 (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_38"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 4 (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_37"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 5 (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_39"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 6 (0)</font></font></a></li>
+</ul>
+<ul class="list-unstyled">
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_40"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 7 (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_41"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 8 (0)</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34_42"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">prueba 9 (0)</font></font></a></li>
+</ul>
+</div>
+<a href="https://demo.opencart.com/index.php?route=product/category&amp;path=34" class="see-all"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mostrar todos los reproductores de MP3</font></font></a> </div>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+<div id="common-home" class="container">
+<div class="row">
+<div id="content" class="col-sm-12"><div class="swiper-viewport">
+<div id="slideshow0" class="swiper-container swiper-container-horizontal">
+<div class="swiper-wrapper" style="transform: translate3d(-3486px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide text-center swiper-slide-duplicate swiper-slide-next swiper-slide-duplicate-prev" data-swiper-slide-index="1" style="width: 1132px; margin-right: 30px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/banners/MacBookAir-1140x380.jpg" alt="MacBook Air" class="img-responsive"></div> <div class="swiper-slide text-center swiper-slide-duplicate-active" data-swiper-slide-index="0" style="width: 1132px; margin-right: 30px;"><a href="index.php?route=product/product&amp;path=57&amp;product_id=49"><img src="https://demo.opencart.com/image/cache/catalog/demo/banners/iPhone6-1140x380.jpg" alt="iphone 6" class="img-responsive"></a></div>
+<div class="swiper-slide text-center swiper-slide-prev swiper-slide-duplicate-next" data-swiper-slide-index="1" style="width: 1132px; margin-right: 30px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/banners/MacBookAir-1140x380.jpg" alt="MacBook Air" class="img-responsive"></div>
+<div class="swiper-slide text-center swiper-slide-duplicate swiper-slide-active" data-swiper-slide-index="0" style="width: 1132px; margin-right: 30px;"><a href="index.php?route=product/product&amp;path=57&amp;product_id=49"><img src="https://demo.opencart.com/image/cache/catalog/demo/banners/iPhone6-1140x380.jpg" alt="iphone 6" class="img-responsive"></a></div></div>
+</div>
+<div class="swiper-pagination slideshow0 swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span></div>
+<div class="swiper-pager">
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+</div>
+</div>
+<script type="text/javascript"><!--
+$('#slideshow0').swiper({
+	mode: 'horizontal',
+	slidesPerView: 1,
+	pagination: '.slideshow0',
+	paginationClickable: true,
+	nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    spaceBetween: 30,
+	autoplay: 2500,
+    autoplayDisableOnInteraction: true,
+	loop: true
+});
+--></script>
+<h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Presentado</font></font></h3>
+<div class="row">
+<div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<div class="product-thumb transition">
+<div class="image"><a href="https://demo.opencart.com/index.php?route=product/product&amp;product_id=43"><img src="https://demo.opencart.com/image/cache/catalog/demo/macbook_1-200x200.jpg" alt="macbook" title="macbook" class="img-responsive"></a></div>
+<div class="caption">
+<h4><a href="https://demo.opencart.com/index.php?route=product/product&amp;product_id=43"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">macbook</font></font></a></h4>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+Procesador Intel Core 2 Duo Impulsado por un procesador Intel Core 2 Duo a velocidades de hasta 2.1..</font></font></p>
+<p class="price"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+518,16€
+</font></font><span class="price-tax"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sin IVA: 430,37€</font></font></span>
+</p>
+</div>
+<div class="button-group">
+<button type="button" onclick="cart.add('43');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Añadir al carrito</font></font></span></button>
+<button type="button" data-toggle="tooltip" title="" onclick="wishlist.add('43');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button>
+<button type="button" data-toggle="tooltip" title="" onclick="compare.add('43');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button>
+</div>
+</div>
+</div>
+<div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<div class="product-thumb transition">
+<div class="image"><a href="https://demo.opencart.com/index.php?route=product/product&amp;product_id=40"><img src="https://demo.opencart.com/image/cache/catalog/demo/iphone_1-200x200.jpg" alt="iPhone" title="iPhone" class="img-responsive"></a></div>
+<div class="caption">
+<h4><a href="https://demo.opencart.com/index.php?route=product/product&amp;product_id=40"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">iPhone</font></font></a></h4>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+iPhone es un nuevo teléfono móvil revolucionario que le permite hacer una llamada simplemente tocando un nombre..</font></font></p>
+<p class="price"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+106,04€
+</font></font><span class="price-tax"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sin IVA: 86,93€</font></font></span>
+</p>
+</div>
+<div class="button-group">
+<button type="button" onclick="cart.add('40');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Añadir al carrito</font></font></span></button>
+<button type="button" data-toggle="tooltip" title="" onclick="wishlist.add('40');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button>
+<button type="button" data-toggle="tooltip" title="" onclick="compare.add('40');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button>
+</div>
+</div>
+</div>
+<div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<div class="product-thumb transition">
+<div class="image"><a href="https://demo.opencart.com/index.php?route=product/product&amp;product_id=42"><img src="https://demo.opencart.com/image/cache/catalog/demo/apple_cinema_30-200x200.jpg" alt="Cine Apple de 30&quot;" title="Cine Apple de 30&quot;" class="img-responsive"></a></div>
+<div class="caption">
+<h4><a href="https://demo.opencart.com/index.php?route=product/product&amp;product_id=42"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cine Apple de 30"</font></font></a></h4>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+La pantalla Apple Cinema HD de 30 pulgadas ofrece una increíble resolución de 2560 x 1600 píxeles. </font><font style="vertical-align: inherit;">Diseñado sp..</font></font></p>
+<p class="price">
+<span class="price-new"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">94,68€ </font></font></span> <span class="price-old"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">105,01€</font></font></span>
+<span class="price-tax"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sin IVA: 77,47€</font></font></span>
+</p>
+</div>
+<div class="button-group">
+<button type="button" onclick="cart.add('42');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Añadir al carrito</font></font></span></button>
+<button type="button" data-toggle="tooltip" title="" onclick="wishlist.add('42');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button>
+<button type="button" data-toggle="tooltip" title="" onclick="compare.add('42');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button>
+</div>
+</div>
+</div>
+<div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
+<div class="product-thumb transition">
+<div class="image"><a href="https://demo.opencart.com/index.php?route=product/product&amp;product_id=30"><img src="https://demo.opencart.com/image/cache/catalog/demo/canon_eos_5d_1-200x200.jpg" alt="Canon EOS 5D" title="Canon EOS 5D" class="img-responsive"></a></div>
+<div class="caption">
+<h4><a href="https://demo.opencart.com/index.php?route=product/product&amp;product_id=30"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Canon EOS 5D</font></font></a></h4>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+El material de prensa de Canon para la EOS 5D afirma que 'define (a) una nueva categoría D-SLR', mientras que nosotros...</font></font></p>
+<p class="price">
+<span class="price-new"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">84,35€ </font></font></span> <span class="price-old"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">105,01€</font></font></span>
+<span class="price-tax"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sin IVA: 68,86€</font></font></span>
+</p>
+</div>
+<div class="button-group">
+<button type="button" onclick="cart.add('30');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Añadir al carrito</font></font></span></button>
+<button type="button" data-toggle="tooltip" title="" onclick="wishlist.add('30');" data-original-title="Add to Wish List"><i class="fa fa-heart"></i></button>
+<button type="button" data-toggle="tooltip" title="" onclick="compare.add('30');" data-original-title="Compare this Product"><i class="fa fa-exchange"></i></button>
+</div>
+</div>
+</div>
+</div>
+<div class="swiper-viewport">
+<div id="carousel0" class="swiper-container swiper-container-horizontal">
+<div class="swiper-wrapper" style="transform: translate3d(-2037.6px, 0px, 0px); transition-duration: 0ms;"><div class="swiper-slide text-center swiper-slide-duplicate" data-swiper-slide-index="6" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/harley-130x100.png" alt="Harley Davidson" class="img-responsive"></div><div class="swiper-slide text-center swiper-slide-duplicate" data-swiper-slide-index="7" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/dell-130x100.png" alt="dell" class="img-responsive"></div><div class="swiper-slide text-center swiper-slide-duplicate" data-swiper-slide-index="8" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/disney-130x100.png" alt="Disney" class="img-responsive"></div><div class="swiper-slide text-center swiper-slide-duplicate" data-swiper-slide-index="9" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/starbucks-130x100.png" alt="starbucks" class="img-responsive"></div><div class="swiper-slide text-center swiper-slide-duplicate" data-swiper-slide-index="10" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/nintendo-130x100.png" alt="nintendo" class="img-responsive"></div> <div class="swiper-slide text-center" data-swiper-slide-index="0" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/nfl-130x100.png" alt="NFL" class="img-responsive"></div>
+<div class="swiper-slide text-center" data-swiper-slide-index="1" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/redbull-130x100.png" alt="Toro rojo" class="img-responsive"></div>
+<div class="swiper-slide text-center" data-swiper-slide-index="2" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/sony-130x100.png" alt="sony" class="img-responsive"></div>
+<div class="swiper-slide text-center swiper-slide-prev" data-swiper-slide-index="3" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/cocacola-130x100.png" alt="Coca Cola" class="img-responsive"></div>
+<div class="swiper-slide text-center swiper-slide-active" data-swiper-slide-index="4" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/burgerking-130x100.png" alt="rey de las hamburguesas" class="img-responsive"></div>
+<div class="swiper-slide text-center swiper-slide-next" data-swiper-slide-index="5" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/canon-130x100.png" alt="Canon" class="img-responsive"></div>
+<div class="swiper-slide text-center" data-swiper-slide-index="6" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/harley-130x100.png" alt="Harley Davidson" class="img-responsive"></div>
+<div class="swiper-slide text-center" data-swiper-slide-index="7" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/dell-130x100.png" alt="dell" class="img-responsive"></div>
+<div class="swiper-slide text-center" data-swiper-slide-index="8" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/disney-130x100.png" alt="Disney" class="img-responsive"></div>
+<div class="swiper-slide text-center" data-swiper-slide-index="9" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/starbucks-130x100.png" alt="starbucks" class="img-responsive"></div>
+<div class="swiper-slide text-center" data-swiper-slide-index="10" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/nintendo-130x100.png" alt="nintendo" class="img-responsive"></div>
+<div class="swiper-slide text-center swiper-slide-duplicate" data-swiper-slide-index="0" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/nfl-130x100.png" alt="NFL" class="img-responsive"></div><div class="swiper-slide text-center swiper-slide-duplicate" data-swiper-slide-index="1" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/redbull-130x100.png" alt="Toro rojo" class="img-responsive"></div><div class="swiper-slide text-center swiper-slide-duplicate" data-swiper-slide-index="2" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/sony-130x100.png" alt="sony" class="img-responsive"></div><div class="swiper-slide text-center swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="3" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/cocacola-130x100.png" alt="Coca Cola" class="img-responsive"></div><div class="swiper-slide text-center swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="4" style="width: 226.4px;"><img src="https://demo.opencart.com/image/cache/catalog/demo/manufacturer/burgerking-130x100.png" alt="rey de las hamburguesas" class="img-responsive"></div></div>
+</div>
+<div class="swiper-pagination carousel0 swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
+<div class="swiper-pager">
+<div class="swiper-button-next"></div>
+<div class="swiper-button-prev"></div>
+</div>
+</div>
+<script type="text/javascript"><!--
+$('#carousel0').swiper({
+	mode: 'horizontal',
+	slidesPerView: 5,
+	pagination: '.carousel0',
+	paginationClickable: true,
+	nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+	autoplay: 2500,
+	loop: true
+});
+--></script>
+</div>
+</div>
+</div>
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-sm-3">
+<h5><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Información</font></font></h5>
+<ul class="list-unstyled">
+<li><a href="https://demo.opencart.com/index.php?route=information/information&amp;information_id=4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sobre nosotros</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=information/information&amp;information_id=6"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">información de entrega</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=information/information&amp;information_id=3"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Política de privacidad</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=information/information&amp;information_id=5"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Términos y condiciones</font></font></a></li>
+</ul>
+</div>
+<div class="col-sm-3">
+<h5><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Servicio al Cliente</font></font></h5>
+<ul class="list-unstyled">
+<li><a href="https://demo.opencart.com/index.php?route=information/contact"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Contáctenos</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=account/return/add"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Devoluciones</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=information/sitemap"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mapa del sitio</font></font></a></li>
+</ul>
+</div>
+<div class="col-sm-3">
+<h5><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Extras</font></font></h5>
+<ul class="list-unstyled">
+<li><a href="https://demo.opencart.com/index.php?route=product/manufacturer"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Marcas</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=account/voucher"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Certificados de regalo</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=affiliate/login"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Afiliado</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=product/special"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Especiales</font></font></a></li>
+</ul>
+</div>
+<div class="col-sm-3">
+<h5><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mi cuenta</font></font></h5>
+<ul class="list-unstyled">
+<li><a href="https://demo.opencart.com/index.php?route=account/account"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mi cuenta</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=account/order"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Historial de pedidos</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=account/wishlist"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lista de deseos</font></font></a></li>
+<li><a href="https://demo.opencart.com/index.php?route=account/newsletter"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Boletin informativo</font></font></a></li>
+</ul>
+</div>
+</div>
+<hr>
+<p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Desarrollado por </font></font><a href="http://www.opencart.com"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OpenCart</font></font></a><br><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Tu tienda © 2022</font></font></p>
+</div>
+</footer><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="https://www.gstatic.com/images/branding/product/1x/translate_24dp.png" width="20" height="20" alt="Google Traductor de Google"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Texto original</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Sugiere una traducción mejor</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+
+
+<div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div></body></html>
