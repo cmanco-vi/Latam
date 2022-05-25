@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "306c5eb2-4545-42fd-8156-e643c350dcef",
+		"name": "Rick and Morty API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20356556"
+	},
+	"item": [
+		{
+			"name": "Obtener todos los personajes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Se han obtenido los personajes\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"826\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"827\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_base}}/character",
+					"host": [
+						"{{url_base}}"
+					],
+					"path": [
+						"character"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un solo personaje",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Se han obtenido un solo personaje\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"created\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_base}}/character/2",
+					"host": [
+						"{{url_base}}"
+					],
+					"path": [
+						"character",
+						"2"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4",
+							"disabled": true
+						},
+						{
+							"key": "gender",
+							"value": "Male",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IDs no existen",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Los Ids relacionados no existen\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_base}}/character/827,828,829",
+					"host": [
+						"{{url_base}}"
+					],
+					"path": [
+						"character",
+						"827,828,829"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "4",
+							"disabled": true
+						},
+						{
+							"key": "gender",
+							"value": "Male",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener varios personajes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Se han obtenido varios personajes\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"created\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_base}}/character/1,2,3",
+					"host": [
+						"{{url_base}}"
+					],
+					"path": [
+						"character",
+						"1,2,3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtrar personajes (Ricks vivos)",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Se han obtenido los Ricks vivos\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Ricks\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_base}}/character/?name=rick&status=alive",
+					"host": [
+						"{{url_base}}"
+					],
+					"path": [
+						"character",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "rick"
+						},
+						{
+							"key": "status",
+							"value": "alive"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener personajes por página",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se han obtenido personajes por página\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"result\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_base}}/character/?page=1",
+					"host": [
+						"{{url_base}}"
+					],
+					"path": [
+						"character",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "url_base",
+			"value": "https://rickandmortyapi.com/api"
+		}
+	]
+}

@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "aafe5c51-5085-4447-a665-20cecfd7f74e",
+		"name": "Reserva de libros",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20356556"
+	},
+	"item": [
+		{
+			"name": "Estado de la API",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url_base_reserva}}/status",
+					"host": [
+						"{{Url_base_reserva}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista de libros",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"El libro The Russian existe\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"The Russian\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"El libro The Russians no existe\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"The Russians\");\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url_base_reserva}}/books",
+					"host": [
+						"{{Url_base_reserva}}"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener un solo libro",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"const response = pm.response.json();\r",
+							"pm.test(\"Test de obtener un solo libro OK\", () =>{\r",
+							"    pm.expect(response).to.be.an('Object');\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Url_base_reserva}}/books/3",
+					"host": [
+						"{{Url_base_reserva}}"
+					],
+					"path": [
+						"books",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generar token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"El cliente ya está registrado\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"error\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2e8a5242dbce9b9066bdd53173c9d5b8a8210b36f4c43c993f170d19602a7801",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"clientName\": \"Camilo\",\r\n   \"clientEmail\": \"camilo@example.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url_base_reserva}}/api-clients/",
+					"host": [
+						"{{Url_base_reserva}}"
+					],
+					"path": [
+						"api-clients",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un pedido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Se ha creado un pedido\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"true\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"No se ha creado un pedido\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"false\");\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2e8a5242dbce9b9066bdd53173c9d5b8a8210b36f4c43c993f170d19602a7801",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"bookId\": 1,\r\n  \"customerName\": \"John\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url_base_reserva}}/orders",
+					"host": [
+						"{{Url_base_reserva}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todos los pedidos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Se han obtenido los pedidos\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"bookId\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"bookIds\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2e8a5242dbce9b9066bdd53173c9d5b8a8210b36f4c43c993f170d19602a7801",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url_base_reserva}}/orders",
+					"host": [
+						"{{Url_base_reserva}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar un pedido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha borrado el pedido\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2e8a5242dbce9b9066bdd53173c9d5b8a8210b36f4c43c993f170d19602a7801",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Url_base_reserva}}/orders/OE6IaDCdaKUlfCo27-Tx3",
+					"host": [
+						"{{Url_base_reserva}}"
+					],
+					"path": [
+						"orders",
+						"OE6IaDCdaKUlfCo27-Tx3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar un pedido",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Se ha actualizado el pedido\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2e8a5242dbce9b9066bdd53173c9d5b8a8210b36f4c43c993f170d19602a7801",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customerName\":\"Crihstian\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Url_base_reserva}}/orders/uezW7NZoFt_Z8zcd_OMOM",
+					"host": [
+						"{{Url_base_reserva}}"
+					],
+					"path": [
+						"orders",
+						"uezW7NZoFt_Z8zcd_OMOM"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Url_base_reserva",
+			"value": "https://simple-books-api.glitch.me"
+		}
+	]
+}
